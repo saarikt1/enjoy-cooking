@@ -5,7 +5,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "react-native", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -34,6 +34,7 @@
     ],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "react/style-prop-object": "off",
     "no-use-before-define": "off",
     "import/extensions": ["error", "never"],
     "react/prop-types": 0,
