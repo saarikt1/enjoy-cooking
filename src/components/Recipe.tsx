@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function RecipeView() {
+export default function Recipe() {
   return (
     <View>
       <Text style={styles.title}>Kookoscurry</Text>
