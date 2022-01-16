@@ -1,5 +1,14 @@
 import React from 'react';
-import { FlatList, ListRenderItem, Text, View } from 'react-native';
+import {
+  FlatList,
+  ListRenderItem,
+  Text,
+  View,
+  StyleSheet,
+  Image,
+} from 'react-native';
+
+import kalaseljankaImg from '../../assets/images/kalaseljanka.webp';
 
 interface Recipe {
   id: number;
@@ -70,11 +79,45 @@ const recipes: Recipe[] = [
 
 function RecipeList() {
   const renderRecipeListItem: ListRenderItem<Recipe> = ({ item }) => (
-    <View>
-      <Text>{item.name}</Text>
+    <View style={styles.listItem}>
+      <Image style={styles.image} source={kalaseljankaImg} />
+      <View style={styles.listItemContentArea}>
+        <Text style={styles.listItemHeader}>{item.name}</Text>
+        <Text>Rating: {item.rating}</Text>
+      </View>
     </View>
   );
-  return <FlatList data={recipes} renderItem={renderRecipeListItem} />;
+  return (
+    <View style={styles.recipeList}>
+      <Text style={styles.heading}>My recipes</Text>
+      <FlatList data={recipes} renderItem={renderRecipeListItem} />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  recipeList: {
+    margin: 24,
+  },
+  heading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 24,
+  },
+  listItem: {
+    flexDirection: 'row',
+    marginBottom: 8,
+  },
+  listItemContentArea: {
+    marginLeft: 16,
+  },
+  listItemHeader: {
+    fontSize: 14,
+  },
+  image: {
+    width: 64,
+    height: 64,
+  },
+});
 
 export default RecipeList;

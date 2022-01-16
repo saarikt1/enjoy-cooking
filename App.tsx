@@ -6,9 +6,8 @@ import RecipeList from './src/components/RecipeList';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Recipe />
-      <Text>List of recipes</Text>
       <RecipeList />
+      <Recipe />
       <StatusBar />
     </SafeAreaView>
   );
