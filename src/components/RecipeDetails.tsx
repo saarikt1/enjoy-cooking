@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Recipe() {
+const RecipeDetails = () => {
   return (
     <View>
       <Text style={styles.title}>Kookoscurry</Text>
@@ -23,7 +23,7 @@ export default function Recipe() {
       </Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   title: {
@@ -36,3 +36,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default RecipeDetails;
