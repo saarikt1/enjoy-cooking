@@ -20,6 +20,7 @@ const App: React.FC<RootStackParamList> = () => {
           screenOptions={{
             title: 'Enjoy Cooking',
             headerBackTitleVisible: false,
+            headerShown: false,
           }}
         >
           <Stack.Screen name="RecipeList" component={RecipeList} />
