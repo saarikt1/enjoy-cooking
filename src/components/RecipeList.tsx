@@ -6,9 +6,17 @@ import {
   View,
   StyleSheet,
   Image,
+  Pressable,
 } from 'react-native';
 
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import kalaseljankaImg from '../../assets/images/kalaseljanka.webp';
+import { RootStackParamList } from '../../App';
+
+type RecipeListScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'RecipeList'
+>;
 
 interface Recipe {
   id: number;
@@ -77,15 +85,17 @@ const recipes: Recipe[] = [
   },
 ];
 
-function RecipeList() {
+const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
   const renderRecipeListItem: ListRenderItem<Recipe> = ({ item }) => (
-    <View style={styles.listItem}>
-      <Image style={styles.image} source={kalaseljankaImg} />
-      <View style={styles.listItemContentArea}>
-        <Text style={styles.listItemHeader}>{item.name}</Text>
-        <Text>Rating: {item.rating}</Text>
+    <Pressable onPress={() => navigation.navigate('RecipeDetails')}>
+      <View style={styles.listItem}>
+        <Image style={styles.image} source={kalaseljankaImg} />
+        <View style={styles.listItemContentArea}>
+          <Text style={styles.listItemHeader}>{item.name}</Text>
+          <Text>Rating: {item.rating}</Text>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
   return (
     <View style={styles.recipeList}>
@@ -93,7 +103,7 @@ function RecipeList() {
       <FlatList data={recipes} renderItem={renderRecipeListItem} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   recipeList: {
