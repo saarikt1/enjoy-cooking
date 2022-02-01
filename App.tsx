@@ -6,24 +6,8 @@ import AppLoading from 'expo-app-loading';
 
 import {
   useFonts,
-  // LibreFranklin_100Thin,
-  // LibreFranklin_200ExtraLight,
-  // LibreFranklin_300Light,
   LibreFranklin_400Regular,
-  // LibreFranklin_500Medium,
-  // LibreFranklin_600SemiBold,
   LibreFranklin_700Bold,
-  // LibreFranklin_800ExtraBold,
-  // LibreFranklin_900Black,
-  // LibreFranklin_100Thin_Italic,
-  // LibreFranklin_200ExtraLight_Italic,
-  // LibreFranklin_300Light_Italic,
-  // LibreFranklin_400Regular_Italic,
-  // LibreFranklin_500Medium_Italic,
-  // LibreFranklin_600SemiBold_Italic,
-  // LibreFranklin_700Bold_Italic,
-  // LibreFranklin_800ExtraBold_Italic,
-  // LibreFranklin_900Black_Italic,
 } from '@expo-google-fonts/libre-franklin';
 
 import RecipeList from './src/components/RecipeList';
@@ -38,24 +22,8 @@ export type RootStackParamList = {
 
 const App: React.FC<RootStackParamList> = () => {
   let [fontsLoaded] = useFonts({
-    // LibreFranklin_100Thin,
-    // LibreFranklin_200ExtraLight,
-    // LibreFranklin_300Light,
     LibreFranklin_400Regular,
-    // LibreFranklin_500Medium,
-    // LibreFranklin_600SemiBold,
     LibreFranklin_700Bold,
-    // LibreFranklin_800ExtraBold,
-    // LibreFranklin_900Black,
-    // LibreFranklin_100Thin_Italic,
-    // LibreFranklin_200ExtraLight_Italic,
-    // LibreFranklin_300Light_Italic,
-    // LibreFranklin_400Regular_Italic,
-    // LibreFranklin_500Medium_Italic,
-    // LibreFranklin_600SemiBold_Italic,
-    // LibreFranklin_700Bold_Italic,
-    // LibreFranklin_800ExtraBold_Italic,
-    // LibreFranklin_900Black_Italic,
   });
   if (!fontsLoaded) {
     return <AppLoading />;
