@@ -8,8 +8,11 @@ import {
   Image,
   Pressable,
 } from 'react-native';
-
+import { AntDesign } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import textStyles from '../styles/TextStyles';
+import colorStyles from '../styles/ColorStyles';
+
 import kalaseljankaImg from '../../assets/images/kalaseljanka.webp';
 import { RootStackParamList } from '../../App';
 
@@ -29,7 +32,7 @@ interface Recipe {
 const recipes: Recipe[] = [
   {
     id: 1,
-    name: 'Kookoscurry',
+    name: 'Kookoscurry with a long name',
     ingredients: [
       '1 dl vihreitä linssejä',
       '1 sipuli',
@@ -91,42 +94,63 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
       <View style={styles.listItem}>
         <Image style={styles.image} source={kalaseljankaImg} />
         <View style={styles.listItemContentArea}>
-          <Text style={styles.listItemHeader}>{item.name}</Text>
-          <Text>Rating: {item.rating}</Text>
+          <Text style={[textStyles.headingSmall, { marginBottom: 4 }]}>
+            {item.name}
+          </Text>
+          {/* <View style={{height: 4}}></View> */}
+          <Text style={[textStyles.bodyMedium, colorStyles.grey60]}>
+            Rating: {item.rating}
+          </Text>
         </View>
       </View>
     </Pressable>
   );
   return (
-    <View style={styles.recipeList}>
-      <Text style={styles.heading}>My recipes</Text>
-      <FlatList data={recipes} renderItem={renderRecipeListItem} />
+    <View>
+      <View style={styles.header}>
+        <Text style={textStyles.headingLarge}>My recipes</Text>
+        <Pressable>
+          <AntDesign name="user" size={32} color="black" />
+        </Pressable>
+      </View>
+
+      <View style={styles.recipeList}>
+        <FlatList data={recipes} renderItem={renderRecipeListItem} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   recipeList: {
-    margin: 24,
+    marginTop: 8,
+    marginLeft: 24,
+    marginRight: 24,
   },
-  heading: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 24,
+  header: {
+    margin: 24,
+    marginTop: 72,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   listItem: {
+    borderColor: '#666666',
+    borderWidth: 1,
     flexDirection: 'row',
-    marginBottom: 8,
+    marginBottom: 16,
+    // minHeight: 80,
   },
   listItemContentArea: {
-    marginLeft: 16,
+    width: '60%',
+    margin: 16,
   },
   listItemHeader: {
     fontSize: 14,
   },
   image: {
-    width: 64,
-    height: 64,
+    width: 96,
+    height: '100%',
   },
 });
 
