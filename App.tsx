@@ -12,12 +12,14 @@ import {
 
 import RecipeList from './src/components/RecipeList';
 import RecipeDetails from './src/components/RecipeDetails';
+import Profile from './src/components/Profile';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
   RecipeList: undefined;
   RecipeDetails: undefined;
+  Profile: undefined;
 };
 
 const App: React.FC<RootStackParamList> = () => {
@@ -41,6 +43,7 @@ const App: React.FC<RootStackParamList> = () => {
         >
           <Stack.Screen name="RecipeList" component={RecipeList} />
           <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
