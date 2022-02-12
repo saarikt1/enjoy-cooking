@@ -22,6 +22,7 @@
   },
   "rules": {
     "import/no-unresolved": 0,
+    "import/extensions": 0,
     "react/function-component-definition": [
       2,
       {
@@ -48,7 +49,6 @@
     "react/react-in-jsx-scope": "off",
     "react/style-prop-object": "off",
     "no-use-before-define": "off",
-    "import/extensions": ["error", "never"],
     "react/prop-types": 0,
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"]

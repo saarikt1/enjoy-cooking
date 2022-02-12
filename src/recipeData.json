@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "name": "Kookoscurry",
+    "ingredients": [
+      "1 dl vihreitä linssejä",
+      "1 sipuli",
+      "2 valkosipulinkynttä",
+      "tuoretta chiliä maun mukaan",
+      "2 tl kookosöljyä",
+      "0,5 tl garam masalaa",
+      "2 tl currytahnaa",
+      "3 kaffirlimen lehteä",
+      "2 dl tomaattimurskaa",
+      "1 tlk kikherneitä",
+      "2 dl kookosmaitoa",
+      "0,5 limen mehu",
+      "tummaa riisiä"
+    ],
+  "directions": [
+    "Huuhtele linssit ja keitä ne lähes pehmeiksi suolalla maustetussa vedessä n. 20 minuuttia",
+    "Pilko sillä välin sipuli, valkosipulinkynnet ja tuore chili.",
+    "Kuumenna koookosöljy kattilassa ja lisää garam masala ja currytahna. Lisää sipulit ja chilit ja kuullota muutama minuutti.",
+    "Lisää kattilaan tomaattimurska ja kaffirlimen lehdet. Lisää sekaan lähes pehmeät linssit sekä huuhdellut kikherneet.",
+    "Keittele, kunnes linssit ovat kokonaan pehmeitä. Lisää kattilaan kookosmaitoa ja limen mehu. Kuumenna."
+  ],
+  "rating": 4
+  },
+  {
+    "id": 2,
+    "name": "Kalaseljanka",
+    "ingredients": [
+      "2 sipulia",
+      "3 porkkanaa",
+      "1 rkl voita",
+      "1 rkl vehnäjauhoja",
+      "7 dl vettä",
+      "1 tlk viipaloituja herkkusieniä",
+      "1 laakerinlehti",
+      "1 tl suolaa",
+      "mustapippuria",
+      "1–2 valkosipulinkynttä",
+      "1 pkt alaskanseitiä",
+      "3 rkl tomaattisosetta",
+      "2 rkl sitruunamehua",
+      "1 maustekurkku",
+      "tilliä",
+      "1 prk smetanaa"
+    ],
+    "directions": [
+      "Viipaloi sipulit ja suikaloi porkkanat sekä selleri.",
+      "Sulata voi ison kattilan pohjalla. Kuullota kasvikset voissa ja ripottele pinnalle vehnäjauhot. Sekoita ja kaada päälle vesi.",
+      "Kaada joukkoon herkkusienet liemineen. Lisää mausteeksi laakerinlehti, suolaa, mustapippuria ja puristetut valkosipulinkynnet. Anna kiehua miedolla lämmöllä noin 10 minuuttia.",
+      "Viipaloi kohmeinen seiti ja lisää keittoon. Anna kiehua edelleen 10 minuuttia. Sekoita varovaisesti joukkoon tomaattipyree, sitruunanmehu ja suikaloitu maustekurkku. Ripottele pinnalle kaprikset ja tilliä. Tarjoa seljankan kanssa smetanaa ja tuoretta leipää."
+    ],
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Spiced Chickpea Stew With Coconut and Turmeric",
+    "ingredients": [
+      "4 garlic cloves",
+      "1 large yellow onion",
+      "1 (2-inch) piece of ginger",
+      "1,5 teaspoons ground turmeric",
+      "1 teaspoon red-pepper flakes",
+      "2-3 cans chickpeas",
+      "2 cans coconut milk",
+      "0.5 litres vegetable stock",
+      "1 bunch kale",
+      "mint leaves",
+      "Yogurt, for serving",
+      "Toasted pita, lavash or other flatbread, for serving"
+    ],
+    "directions": [
+      "Heat oil in a large pot over medium. Add garlic, onion and ginger. Season with salt and pepper, and cook, stirring occasionally until onion is translucent.",
+      "Add turmeric, red-pepper flakes, and the chickpeas, and season with salt and pepper. Cook, stirring frequently, so the chickpeas sizzle and fry a bit in the spices and oil, until they’ve started to break down and get a little browned and crisp. Remove about a cup of chickpeas and set aside for garnish.",
+      "Crush the remaining chickpeas slightly to release their starchy insides. Add coconut milk and stock, and season with salt and pepper.",
+      "Bring to a simmer. Cook until stew has thickened, 30 to 35 minutes. If after 30 to 35 minutes, you want the stew a bit thicker, keep simmering until you've reached your desired consistency.",
+      "Add greens. Cook until they wilt and soften.",
+      "Divide among bowls and top with mint, reserved chickpeas, a sprinkle of red-pepper flakes and a good drizzle of olive oil. Serve alongside yogurt and toasted pita if using; dust the yogurt with turmeric if you'd like."
+    ],
+    "rating": 4
+  }
+]
