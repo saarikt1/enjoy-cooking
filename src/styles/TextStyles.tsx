@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     fontFamily: 'LibreFranklin_700Bold',
     fontSize: 20,
     lineHeight: 22,
-    // marginBottom: 4,
   },
   bodyLarge: {
     fontFamily: 'LibreFranklin_400Regular',

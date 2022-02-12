@@ -97,7 +97,6 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
           <Text style={[textStyles.headingSmall, { marginBottom: 4 }]}>
             {item.name}
           </Text>
-          {/* <View style={{height: 4}}></View> */}
           <Text style={[textStyles.bodyMedium, colorStyles.grey60]}>
             Rating: {item.rating}
           </Text>
@@ -139,7 +138,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     flexDirection: 'row',
     marginBottom: 16,
-    // minHeight: 80,
   },
   listItemContentArea: {
     width: '60%',
