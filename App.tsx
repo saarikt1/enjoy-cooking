@@ -6,8 +6,8 @@ import AppLoading from 'expo-app-loading';
 
 import {
   useFonts,
-  LibreFranklin_400Regular,
-  LibreFranklin_700Bold,
+  LibreFranklin_400Regular as LibreFranklingRegular,
+  LibreFranklin_700Bold as LibreFranklinBold,
 } from '@expo-google-fonts/libre-franklin';
 
 import RecipeList from './src/components/RecipeList';
@@ -21,31 +21,30 @@ export type RootStackParamList = {
 };
 
 const App: React.FC<RootStackParamList> = () => {
-  let [fontsLoaded] = useFonts({
-    LibreFranklin_400Regular,
-    LibreFranklin_700Bold,
+  const [fontsLoaded] = useFonts({
+    LibreFranklingRegular,
+    LibreFranklinBold,
   });
   if (!fontsLoaded) {
     return <AppLoading />;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName="RecipeList"
-            screenOptions={{
-              title: 'Enjoy Cooking',
-              headerBackTitleVisible: false,
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen name="RecipeList" component={RecipeList} />
-            <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </SafeAreaProvider>
-    );
   }
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="RecipeList"
+          screenOptions={{
+            title: 'Enjoy Cooking',
+            headerBackTitleVisible: false,
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="RecipeList" component={RecipeList} />
+          <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 };
 
 export default App;
