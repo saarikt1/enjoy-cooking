@@ -10,7 +10,7 @@ import {
 
 import { AntDesign } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import textStyles from '../../styles/TextStyles';
+import textStyles from '../styles/TextStyles';
 import Divider from './Divider';
 
 import { RootStackParamList } from '../../App';

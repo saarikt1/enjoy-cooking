@@ -6,7 +6,7 @@ import AppLoading from 'expo-app-loading';
 
 import {
   useFonts,
-  LibreFranklin_400Regular as LibreFranklingRegular,
+  LibreFranklin_400Regular as LibreFranklinRegular,
   LibreFranklin_700Bold as LibreFranklinBold,
 } from '@expo-google-fonts/libre-franklin';
 
@@ -22,7 +22,7 @@ export type RootStackParamList = {
 
 const App: React.FC<RootStackParamList> = () => {
   const [fontsLoaded] = useFonts({
-    LibreFranklingRegular,
+    LibreFranklinRegular,
     LibreFranklinBold,
   });
   if (!fontsLoaded) {
