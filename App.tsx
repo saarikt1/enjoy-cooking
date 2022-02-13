@@ -1,6 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import AppLoading from 'expo-app-loading';
+
+import {
+  useFonts,
+  LibreFranklin_400Regular as LibreFranklinRegular,
+  LibreFranklin_700Bold as LibreFranklinBold,
+} from '@expo-google-fonts/libre-franklin';
+
 import RecipeList from './src/components/RecipeList';
 import RecipeDetails from './src/components/RecipeDetails';
 
@@ -12,6 +21,13 @@ export type RootStackParamList = {
 };
 
 const App: React.FC<RootStackParamList> = () => {
+  const [fontsLoaded] = useFonts({
+    LibreFranklinRegular,
+    LibreFranklinBold,
+  });
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <SafeAreaProvider>
       <NavigationContainer>
@@ -20,6 +36,7 @@ const App: React.FC<RootStackParamList> = () => {
           screenOptions={{
             title: 'Enjoy Cooking',
             headerBackTitleVisible: false,
+            headerShown: false,
           }}
         >
           <Stack.Screen name="RecipeList" component={RecipeList} />
