@@ -22,11 +22,15 @@ type RecipeDetailsScreenProps = NativeStackScreenProps<
   'RecipeDetails'
 >;
 
-const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({ navigation }) => {
+const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
+  route,
+  navigation,
+}) => {
+  const recipe = route.params;
   return (
     <View>
       <View style={styles.header}>
-        <Text style={textStyles.headingLarge}>Kookoscurry</Text>
+        <Text style={textStyles.headingLarge}>{recipe.name}</Text>
         <Pressable onPress={() => navigation.navigate('RecipeList')}>
           <AntDesign name="closecircleo" size={32} color="black" />
         </Pressable>

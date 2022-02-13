@@ -22,7 +22,7 @@ type RecipeListScreenProps = NativeStackScreenProps<
   'RecipeList'
 >;
 
-interface Recipe {
+export interface Recipe {
   id: number;
   name: string;
   ingredients: string[];
@@ -34,7 +34,7 @@ const recipes: Recipe[] = recipeData;
 
 const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
   const renderRecipeListItem: ListRenderItem<Recipe> = ({ item }) => (
-    <Pressable onPress={() => navigation.navigate('RecipeDetails')}>
+    <Pressable onPress={() => navigation.navigate('RecipeDetails', item)}>
       <View style={styles.listItem}>
         <Image style={styles.image} source={placeholderImg} />
         <View style={styles.listItemContentArea}>
