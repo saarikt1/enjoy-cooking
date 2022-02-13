@@ -10,14 +10,14 @@ import {
   LibreFranklin_700Bold as LibreFranklinBold,
 } from '@expo-google-fonts/libre-franklin';
 
-import RecipeList from './src/components/RecipeList';
+import RecipeList, { Recipe } from './src/components/RecipeList';
 import RecipeDetails from './src/components/RecipeDetails';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
   RecipeList: undefined;
-  RecipeDetails: undefined;
+  RecipeDetails: Recipe;
 };
 
 const App: React.FC<RootStackParamList> = () => {

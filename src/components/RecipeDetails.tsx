@@ -6,6 +6,8 @@ import {
   Text,
   View,
   Image,
+  FlatList,
+  ListRenderItem,
 } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
@@ -15,62 +17,55 @@ import Divider from './Divider';
 
 import { RootStackParamList } from '../../App';
 
-import kalaseljankaImg from '../../assets/images/kalaseljanka.webp';
+import placeholderImg from '../../assets/images/placeholderImg.webp';
 
 type RecipeDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'RecipeDetails'
 >;
 
-const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({ navigation }) => {
+type ListType = 'ingredients' | 'instructions';
+
+const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
+  route,
+  navigation,
+}) => {
+  const recipe = route.params;
+
+  const renderList = (listType: ListType, list: string[]) => {
+    return list.map((element, index) => (
+      <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>
+        {listType === 'instructions' && `${index + 1}. `}
+        {element}
+      </Text>
+    ));
+  };
+
   return (
     <View>
       <View style={styles.header}>
-        <Text style={textStyles.headingLarge}>Kookoscurry</Text>
+        <Text style={textStyles.headingLarge}>{recipe.name}</Text>
         <Pressable onPress={() => navigation.navigate('RecipeList')}>
           <AntDesign name="closecircleo" size={32} color="black" />
         </Pressable>
       </View>
 
       <ScrollView>
-        <Image style={styles.heroImage} source={kalaseljankaImg} />
+        <Image style={styles.heroImage} source={placeholderImg} />
 
         <View style={styles.mainInfoWrapper}>
           <Text style={[textStyles.headingSmall, { marginBottom: 16 }]}>
             Ingredients
           </Text>
-          <Text style={[textStyles.bodyMedium, { lineHeight: 32 }]}>
-            {`1 dl vihreitä linssejä
-1 sipuli
-2 valkosipulinkynttä
-tuoretta chiliä maun mukaan
-2 tl kookosöljyä
-0,5 tl garam masalaa
-2 tl currytahnaa
-3 kaffirlimen lehteä
-2 dl tomaattimurskaa
-1 tlk kikherneitä
-2 dl kookosmaitoa
-0,5 limen mehu
-tummaa riisiä`}
-          </Text>
+          {renderList('ingredients', recipe.ingredients)}
 
           <Divider />
 
           <Text style={[textStyles.headingSmall, { marginBottom: 16 }]}>
             Instructions
           </Text>
-          <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>
-            1. Huuhtele linssit ja keitä ne lähes pehmeiksi suolalla maustetussa
-            vedessä n. 20 minuuttia.
-          </Text>
-          <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>
-            2. Pilko sillä välin sipuli, valkosipulinkynnet ja tuore chili.
-          </Text>
-          <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>
-            3. Kuumenna kookosöljy kattilassa ja lisää garam masala ja
-            currytahna. Lisää sipulit ja chilit ja kuullota muutama minuutti.
-          </Text>
+
+          {renderList('instructions', recipe.instructions)}
 
           <Divider />
 
