@@ -13,7 +13,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import textStyles from '../styles/TextStyles';
 import colorStyles from '../styles/ColorStyles';
 
-import kalaseljankaImg from '../../assets/images/kalaseljanka.webp';
+import placeholderImg from '../../assets/images/placeholderImg.webp';
 import { RootStackParamList } from '../../App';
 import recipeData from '../recipeData.json';
 
@@ -36,7 +36,7 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
   const renderRecipeListItem: ListRenderItem<Recipe> = ({ item }) => (
     <Pressable onPress={() => navigation.navigate('RecipeDetails')}>
       <View style={styles.listItem}>
-        <Image style={styles.image} source={kalaseljankaImg} />
+        <Image style={styles.image} source={placeholderImg} />
         <View style={styles.listItemContentArea}>
           <Text style={[textStyles.headingSmall, { marginBottom: 4 }]}>
             {item.name}

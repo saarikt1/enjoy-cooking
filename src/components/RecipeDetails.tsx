@@ -15,7 +15,7 @@ import Divider from './Divider';
 
 import { RootStackParamList } from '../../App';
 
-import kalaseljankaImg from '../../assets/images/kalaseljanka.webp';
+import placeholderImg from '../../assets/images/placeholderImg.webp';
 
 type RecipeDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
@@ -33,7 +33,7 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({ navigation }) => {
       </View>
 
       <ScrollView>
-        <Image style={styles.heroImage} source={kalaseljankaImg} />
+        <Image style={styles.heroImage} source={placeholderImg} />
 
         <View style={styles.mainInfoWrapper}>
           <Text style={[textStyles.headingSmall, { marginBottom: 16 }]}>
