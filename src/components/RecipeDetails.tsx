@@ -24,15 +24,22 @@ type RecipeDetailsScreenProps = NativeStackScreenProps<
   'RecipeDetails'
 >;
 
+type ListType = 'ingredients' | 'instructions';
+
 const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
   route,
   navigation,
 }) => {
   const recipe = route.params;
 
-  const renderItem: ListRenderItem<string> = ({ item }) => (
-    <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>{item}</Text>
-  );
+  const renderList = (listType: ListType, list: string[]) => {
+    return list.map((element, index) => (
+      <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>
+        {listType === 'instructions' && `${index + 1}. `}
+        {element}
+      </Text>
+    ));
+  };
 
   return (
     <View>
@@ -50,7 +57,7 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
           <Text style={[textStyles.headingSmall, { marginBottom: 16 }]}>
             Ingredients
           </Text>
-          <FlatList data={recipe.ingredients} renderItem={renderItem} />
+          {renderList('ingredients', recipe.ingredients)}
 
           <Divider />
 
@@ -58,7 +65,7 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
             Instructions
           </Text>
 
-          <FlatList data={recipe.instructions} renderItem={renderItem} />
+          {renderList('instructions', recipe.instructions)}
 
           <Divider />
 
