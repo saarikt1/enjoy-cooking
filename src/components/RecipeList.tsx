@@ -53,7 +53,7 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
     <View>
       <View style={styles.header}>
         <Text style={textStyles.headingLarge}>My recipes</Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate('Profile')}>
           <AntDesign name="user" size={32} color="black" />
         </Pressable>
       </View>

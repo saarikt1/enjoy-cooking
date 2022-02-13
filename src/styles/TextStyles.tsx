@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 22,
   },
+  headingExtraSmall: {
+    fontFamily: 'LibreFranklinBold',
+    fontSize: 16,
+    lineHeight: 18,
+  },
   bodyLarge: {
     fontFamily: 'LibreFranklinRegular',
     fontSize: 20,
