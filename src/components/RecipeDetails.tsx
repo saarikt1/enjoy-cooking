@@ -6,8 +6,6 @@ import {
   Text,
   View,
   Image,
-  FlatList,
-  ListRenderItem,
 } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
