@@ -10,8 +10,8 @@ import {
   LibreFranklin_700Bold as LibreFranklinBold,
 } from '@expo-google-fonts/libre-franklin';
 
-import RecipeList, { Recipe } from './src/components/RecipeList';
-import RecipeDetails from './src/components/RecipeDetails';
+import RecipeList, { Recipe } from './features/RecipeList';
+import RecipeDetails from './features/RecipeDetails';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

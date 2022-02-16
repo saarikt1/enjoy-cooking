@@ -11,11 +11,11 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import textStyles from '../styles/TextStyles';
-import Divider from './Divider';
+import Divider from '../components/Divider';
 
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../App';
 
-import placeholderImg from '../../assets/images/placeholderImg.webp';
+import placeholderImg from '../assets/images/placeholderImg.webp';
 
 type RecipeDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,

@@ -13,8 +13,8 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import textStyles from '../styles/TextStyles';
 import colorStyles from '../styles/ColorStyles';
 
-import placeholderImg from '../../assets/images/placeholderImg.webp';
-import { RootStackParamList } from '../../App';
+import placeholderImg from '../assets/images/placeholderImg.webp';
+import { RootStackParamList } from '../App';
 import recipeData from '../recipeData.json';
 
 type RecipeListScreenProps = NativeStackScreenProps<
@@ -23,7 +23,7 @@ type RecipeListScreenProps = NativeStackScreenProps<
 >;
 
 export interface Recipe {
-  id: number;
+  id: string;
   name: string;
   ingredients: string[];
   instructions: string[];
@@ -59,7 +59,11 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
       </View>
 
       <View style={styles.recipeList}>
-        <FlatList data={recipes} renderItem={renderRecipeListItem} />
+        <FlatList
+          data={recipes}
+          renderItem={renderRecipeListItem}
+          keyExtractor={item => item.id}
+        />
       </View>
     </View>
   );
