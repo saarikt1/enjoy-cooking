@@ -13,11 +13,17 @@ All the available recipe apps seem to be quite bloated with features. Thus, I th
 
 First, make sure you are using the latest Node.js 16 LTS version (16.13.2) and the corresponding latest npm.
 
+### Client side
+
 Install Expo CLI with `npm install --global expo-cli`
 
-Go to the project folder `cd EnjoyCooking`, install dependencies with `npm install` and start the project with `npm start`. Now you have the option of running the project in a simulator, on a web browser or on your physical device.
+Go to the project folder `cd EnjoyCooking`, install dependencies with `npm install` and start the project with `npm run start:client`. Now you have the option of running the project in a simulator, on a web browser or on your physical device.
 
 For the simulators, see instructions for [iOS](https://docs.expo.dev/workflow/ios-simulator/) and [Android](https://docs.expo.dev/workflow/android-studio-emulator/). If you want to run on a physical device, install the Expo Go app: [iOS App Store](https://itunes.com/apps/exponent), [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent).
+
+### Server side
+
+Start server with `npm run start:server`.
 
 ## Design
 
