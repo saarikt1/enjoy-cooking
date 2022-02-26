@@ -32,7 +32,10 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
 
   const renderList = (listType: ListType, list: string[]) => {
     return list.map((element, index) => (
-      <Text style={[textStyles.bodyMedium, { marginBottom: 16 }]}>
+      <Text
+        key={element.toString()}
+        style={[textStyles.bodyMedium, { marginBottom: 16 }]}
+      >
         {listType === 'instructions' && `${index + 1}. `}
         {element}
       </Text>
