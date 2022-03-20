@@ -1,23 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   headingLarge: {
-    fontFamily: 'LibreFranklinBold',
+    fontFamily: "LibreFranklinBold",
     fontSize: 32,
     lineHeight: 36,
   },
   headingSmall: {
-    fontFamily: 'LibreFranklinBold',
+    fontFamily: "LibreFranklinBold",
     fontSize: 20,
     lineHeight: 22,
   },
   bodyLarge: {
-    fontFamily: 'LibreFranklinRegular',
+    fontFamily: "LibreFranklinRegular",
     fontSize: 20,
     lineHeight: 26,
   },
   bodyMedium: {
-    fontFamily: 'LibreFranklinRegular',
+    fontFamily: "LibreFranklinRegular",
     fontSize: 16,
     lineHeight: 22,
   },

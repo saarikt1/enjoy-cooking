@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FlatList,
   ListRenderItem,
@@ -7,19 +7,19 @@ import {
   StyleSheet,
   Image,
   Pressable,
-} from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import textStyles from '../styles/TextStyles';
-import colorStyles from '../styles/ColorStyles';
+} from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import textStyles from "../styles/TextStyles";
+import colorStyles from "../styles/ColorStyles";
 
-import placeholderImg from '../assets/images/placeholderImg.webp';
-import { RootStackParamList } from '../App';
-import recipeData from '../recipeData.json';
+import placeholderImg from "../assets/images/placeholderImg.webp";
+import { RootStackParamList } from "../App";
+import recipeData from "../recipeData.json";
 
 type RecipeListScreenProps = NativeStackScreenProps<
   RootStackParamList,
-  'RecipeList'
+  "RecipeList"
 >;
 
 export interface Recipe {
@@ -34,7 +34,7 @@ const recipes: Recipe[] = recipeData;
 
 const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
   const renderRecipeListItem: ListRenderItem<Recipe> = ({ item }) => (
-    <Pressable onPress={() => navigation.navigate('RecipeDetails', item)}>
+    <Pressable onPress={() => navigation.navigate("RecipeDetails", item)}>
       <View style={styles.listItem}>
         <Image style={styles.image} source={placeholderImg} />
         <View style={styles.listItemContentArea}>
@@ -49,6 +49,18 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
     </Pressable>
   );
 
+  // eslint-disable-next-line consistent-return
+  const getRecipesFromApi = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/recipes");
+      const json = await response.json();
+      console.log(`response: ${json.data}`);
+      return json.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <View>
       <View style={styles.header}>
@@ -62,7 +74,7 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
         <FlatList
           data={recipes}
           renderItem={renderRecipeListItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
         />
       </View>
     </View>
@@ -78,18 +90,18 @@ const styles = StyleSheet.create({
   header: {
     margin: 24,
     marginTop: 72,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   listItem: {
-    borderColor: '#666666',
+    borderColor: "#666666",
     borderWidth: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
     marginBottom: 16,
   },
   listItemContentArea: {
-    width: '60%',
+    width: "60%",
     margin: 16,
   },
   listItemHeader: {
@@ -97,7 +109,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 96,
-    height: '100%',
+    height: "100%",
   },
 });
 

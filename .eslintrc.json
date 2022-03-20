@@ -10,7 +10,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-native", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "react-native"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -30,19 +30,10 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "react/jsx-filename-extension": [1, {
-      "extensions": [
-        ".ts",
-        ".tsx"
-      ]
-    }],
-    "prettier/prettier": [
-      "error",
+    "react/jsx-filename-extension": [
+      1,
       {
-        "singleQuote": true,
-        "trailingComma": "all",
-        "arrowParens": "avoid",
-        "endOfLine": "auto"
+        "extensions": [".ts", ".tsx"]
       }
     ],
     "react/jsx-uses-react": "off",

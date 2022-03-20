@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Pressable,
   ScrollView,
@@ -6,23 +6,23 @@ import {
   Text,
   View,
   Image,
-} from 'react-native';
+} from "react-native";
 
-import { AntDesign } from '@expo/vector-icons';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import textStyles from '../styles/TextStyles';
-import Divider from '../components/Divider';
+import { AntDesign } from "@expo/vector-icons";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import textStyles from "../styles/TextStyles";
+import Divider from "../components/Divider";
 
-import { RootStackParamList } from '../App';
+import { RootStackParamList } from "../App";
 
-import placeholderImg from '../assets/images/placeholderImg.webp';
+import placeholderImg from "../assets/images/placeholderImg.webp";
 
 type RecipeDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
-  'RecipeDetails'
+  "RecipeDetails"
 >;
 
-type ListType = 'ingredients' | 'instructions';
+type ListType = "ingredients" | "instructions";
 
 const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
   route,
@@ -30,23 +30,22 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
 }) => {
   const recipe = route.params;
 
-  const renderList = (listType: ListType, list: string[]) => {
-    return list.map((element, index) => (
+  const renderList = (listType: ListType, list: string[]) =>
+    list.map((element, index) => (
       <Text
         key={element.toString()}
         style={[textStyles.bodyMedium, { marginBottom: 16 }]}
       >
-        {listType === 'instructions' && `${index + 1}. `}
+        {listType === "instructions" && `${index + 1}. `}
         {element}
       </Text>
     ));
-  };
 
   return (
     <View>
       <View style={styles.header}>
         <Text style={textStyles.headingLarge}>{recipe.name}</Text>
-        <Pressable onPress={() => navigation.navigate('RecipeList')}>
+        <Pressable onPress={() => navigation.navigate("RecipeList")}>
           <AntDesign name="closecircleo" size={32} color="black" />
         </Pressable>
       </View>
@@ -58,7 +57,7 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
           <Text style={[textStyles.headingSmall, { marginBottom: 16 }]}>
             Ingredients
           </Text>
-          {renderList('ingredients', recipe.ingredients)}
+          {renderList("ingredients", recipe.ingredients)}
 
           <Divider />
 
@@ -66,7 +65,7 @@ const RecipeDetails: React.FC<RecipeDetailsScreenProps> = ({
             Instructions
           </Text>
 
-          {renderList('instructions', recipe.instructions)}
+          {renderList("instructions", recipe.instructions)}
 
           <Divider />
 
@@ -81,16 +80,16 @@ const styles = StyleSheet.create({
   header: {
     margin: 24,
     marginTop: 72,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   mainInfoWrapper: {
     margin: 24,
     marginTop: 0,
   },
   heroImage: {
-    width: '100%',
+    width: "100%",
     height: 208,
     marginBottom: 24,
   },
