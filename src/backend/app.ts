@@ -1,7 +1,14 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
 const PORT = 8000;
+const allowedOrigins = ["http://localhost:19006"];
+const corsOptions: cors.CorsOptions = {
+  origin: allowedOrigins,
+};
+
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Hello from the Server side <3");

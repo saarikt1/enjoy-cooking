@@ -61,6 +61,8 @@ const RecipeList: React.FC<RecipeListScreenProps> = ({ navigation }) => {
     }
   };
 
+  getRecipesFromApi();
+
   return (
     <View>
       <View style={styles.header}>
